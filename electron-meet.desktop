@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Meet
+Exec=/home/wally/ServiceTrade/code/electron-meet/route.sh %u
+Icon=/home/wally/.local/share/icons/meet.png
+Type=Application
+MimeType=x-scheme-handler/unknown;x-scheme-handler/about;text/html;text/xml;application/xhtml_xml;x-scheme-handler/http;x-scheme-handler/https;
+
+
