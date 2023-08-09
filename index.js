@@ -1,34 +1,51 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, desktopCapturer } = require('electron')
 
-// Global variable that holds the app window
-let win
+// Global variables
+let win;
+//let url = process.argv[2];
+let url = "https://meet.google.com/"
 
 function createWindow() {
 
-// Creating the browser window
-win = new BrowserWindow({
-	width: 1080,
-	height: 1080,
-})
+	// Creating the browser window
+	win = new BrowserWindow({
+		width: 1080,
+		height: 1080,
+	});
 
-// Load a redirecting url from
-// login to the feed
-win.loadURL(
-process.argv[2])
+	// Remove menu
+	win.setMenuBarVisibility(false);
 
-win.on('closed', () => {
-	win = null
-})
+	// Load a redirecting url from login to the feed
+	win.loadURL(url); //url passed from shell script
+	
+	win.on('closed', () => {
+		win = null
+	});
 
-// Prevent from spawning new windows
-win.webContents.on('new-window', (event, url) => {
-
-	event.preventDefault()
-	win.loadURL(url)
-})
+	// Prevent from spawning new windows
+	win.webContents.on('new-window', (event, url) => {
+		event.preventDefault();
+		win.loadURL(url);
+	});
 }
+
+// this is the start of figuring out how to screen share
+// app.whenReady().then(() => {
+// 	desktopCapturer.getSources({ types: ['window', 'screen'] }).then(async sources => {
+// 		for (const source of sources) {
+// 			console.log(source);
+// 			if (source.name === 'Electron') {
+// 			mainWindow.webContents.send('SET_SOURCE', source.id)
+// 			return
+// 			}
+// 		}
+// 	});
+// });
 
 // Executing the createWindow function
 // when the app is ready
 app.on('ready', createWindow)
+
+
 
