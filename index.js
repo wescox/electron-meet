@@ -43,6 +43,14 @@ function createWindow() {
 // 	});
 // });
 
+app.whenReady().then(() => {
+	session.defaultSession.setDisplayMediaRequestHandler((request, callback) => {
+		desktopCapturer.getSources({types: ['screen']}).then((sources) => {
+			callback({video: sources[0]});
+		});
+	});
+});
+
 // Executing the createWindow function
 // when the app is ready
 app.on('ready', createWindow)
