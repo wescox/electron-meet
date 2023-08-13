@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Meet
-Exec=/home/wally/ServiceTrade/code/brave-meet/router.sh %u
+Exec=/home/wally/ServiceTrade/code/brave-meet/browser-routes.sh %u
 Type=Application
 Icon=meet.png
 MimeType=x-scheme-handler/unknown;x-scheme-handler/about;text/html;text/xml;application/xhtml_xml;x-scheme-handler/http;x-scheme-handler/https;

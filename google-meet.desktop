@@ -1,9 +1,10 @@
 [Desktop Entry]
-Version=1.0
 Name=Meet
-Exec=/opt/brave.com/brave/brave-browser --profile-directory='Profile 1' --app='https://meet.google.com' -class=meet %u
-Icon=meet.png
-Terminal=false
 Type=Application
-StartupWMClass=meet
-MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;
+Exec=/opt/brave.com/brave/brave-browser --profile-directory='Profile 1' --app='https://meet.google.com/tmc-chzm-btp?authuser=0'https://meet.google.com'hs=122' -class=meet %u
+Icon=meet.png
+MimeType=x-scheme-handler/unknown;x-scheme-handler/about;text/html;text/xml;application/xhtml_xml;x-scheme-handler/http;x-scheme-handler/https;
+Terminal=false
+
+
+
